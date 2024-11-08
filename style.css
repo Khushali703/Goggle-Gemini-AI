@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap");
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    height:100vh;
+    font-family: "Outfit";
+}
+i{
+    font-size: 16px;
+}
+.container{
+    height: 100%;
+    display:flex;
+}
+.sideNavigation{
+    width:350px;
+    background-color: #e5e7ea;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.sideNavigation .toBarAction{
+    margin: 15px;
+    cursor:pointer;
+}
+.sideNavigation .toBarAction i{
+    font-size: 18px;
+}
+.sideNavigation .sideNavButton{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.sideNavigation .chatHistory{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.sideNavigation .chatHistory::-webkit-scrollbar{
+    display: none;
+}
+.sideNavigation .chatHistory h5{
+    font-size: 0.975rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    margin:15px 5px;
+}
+ul{
+    list-style-type: none;
+}
+.sideNavigation .chatHistory li{
+    height: 40px;
+    border-radius: 50px;
+    display:flex;
+    align-items: center;
+    padding: 10px;
+    cursor : pointer;
+    font-size: 14px;
+    display: inline-block;
+    width: 225px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+/*add class using javascript and then style it */
+.sideNavigation.expandClose{
+    width : 68px;
+}
+.sideNavigation.expandClose .sideNavButton button,
+.sideNavigation.expandClose .actionList button{
+    width : 45px;
+    text-align: center;
+}
+.sideNavigation.expandClose .collapseText,
+.sideNavigation.expandClose .chatHistory,
+.chat-window .chatContent{
+    display: none;
+}
+
+
+.sideNavigation .chatHistory i{
+    padding-right: 10px;
+}
+.sideNavigation .chatHistory li:hover{
+    background-color: rgb(205, 208, 211);
+}
+.sideNavigation .sideNavButton button{
+    height : 40px;
+    width:140px;
+    border-radius: 50px;
+    outline: none;
+    border:none;
+    background:  rgb(205, 208, 211);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.sideNavigation .actionList{
+    position: fixed;
+    bottom:15px;
+    display: flex;
+    flex-direction: column;
+}
+.sideNavigation .actionList button{
+    margin: 1px;
+    padding:10px;
+    text-align: left;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    width: 230px;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+}
+.sideNavigation .actionList button:hover{
+    transition: 0.3s;
+    background-color:rgb(205, 208, 211) ;
+}
+.sideNavigation .actionList button .collapseText{
+    padding: 0px 10px;
+}
+.chat-window{
+    width : 100%;
+    display : flex;
+    justify-content: center;
+}
+.chat-window .startContent{
+    min-width: 830px;
+   margin-top: 6rem; 
+}
+.chat-window .startContent h1{
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: normal;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-top: 18px;
+    font-family:'Times New Roman', Times, serif;
+}
+.chat-window .startContent h1 .brandHello{
+    background: linear-gradient(
+        74deg,
+        #4285f4 0,
+        #9b72cb 9%,
+        #d96570 20%,
+        #d96570 24%,
+        #9b72cb 35%,
+        #4285f4 44%,
+        #9b72cb 50%,
+        #d96570 56%,
+        #fff 75%,
+        #fff 100%
+    );
+    background-size: 400% 100%;
+    position: relative;
+    display: inline-block;
+    color:transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.chat-window .startContent h1 .brandQuestion{
+    color: #c0c2c3;
+}
+.chat-window .startContent ul{
+    display: inline-flex;
+    width: 830px;
+    margin-top: 50px;
+}
+.chat-window .startContent ul li{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(239, 239, 247);
+    cursor: pointer;
+}
+.chat-window .startContent ul li:hover{
+    background: #edf1f2;
+}
+.chat-window .startContent .promptSuggestion{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 150px;
+}
+.chat-window .startContent .promptSuggestion p{
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+.chat-window .startContent .promptSuggestion .icon{
+    text-align: end;
+}
+.chat-window .startContent .promptSuggestion i{
+    background: #fff;
+    padding: 10px;
+    border-radius: 50px;
+}
+.chat-window .chatContent{
+    overflow-y: scroll;
+    width:900px;
+    height:650px;   
+}
+.chat-window ::-webkit-scrollbar{
+    display: none;
+}
+.chatContent{
+    width: 900px;
+}
+.inputArea,
+.privacyPolicy{
+    position : fixed;
+    bottom: 30px;
+    display: flex;
+    background: #e6e7e7;
+    border-radius: 50px;
+    padding: 4px 8px;
+}
+.privacyPolicy{
+    bottom: 5px;
+    font-size: 12px;
+    background: transparent;
+}
+.inputArea input{
+    width: 800px;
+    height:50px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background: transparent;
+    text-align: start;
+}
+.inputArea .iconGroup{
+    position: relative;
+    right: 5px;
+}
+.inputArea .iconGroup i {
+    padding: 15px;
+    font-size: 20px;
+    cursor : pointer;
+    transition: 0.5s;
+}
+
+/* send button should be visible when we enter the prompt */
+.inputArea .iconGroup i:nth-child(3){
+    display: none;
+}
+.chat-window .chatContent .resulTitle p{
+    margin-top: 5rem;  
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.resultData img{
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    animation: spin 4s linear infinite;
+}
+@keyframes spin{
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.loader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+}
+.animateBG{
+    border-radius: 4px;
+    border: none;
+    animation: loader 3s infinite linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #4285f4,#fff,#4285f4);
+    height: 15px;
+}
+.animateBG:nth-child(3){
+    width: 70%;
+}
+@keyframes loader{
+    0%{
+        background-position: -800px 0;
+    }
+    to{
+        background-position: 800px 0;
+    }
+ }
+.chat-window .chatContent .resultTitle p{
+    background: #edf1f2;
+    border-radius: 50px;
+    height: 40px;
+    width: 50%;
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+    margin-top: 4rem;
+    font-size: 1.1rem;
+    margin-left: 50px;
+}
+.chat-window .chatContent .resultData,
+.chat-window .chatContent .resultResponse{
+    display: flex; 
+    align-items: start; 
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+.chat-window .chatContent .resultResponse img{
+    height: 32px;
+    width: 32px;
+}
+.chat-window .chatContent .resultData p,
+.chat-window .chatContent .resultResponse p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 2.2;
+    margin-bottom: 2rem;
+}
