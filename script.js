@@ -1,7 +1,9 @@
+//access sidebar elements 
 let sideNavigation = document.querySelector(".sideNavigation");
 let sidebarToggle = document.querySelector(".fa-bars");
 let chatHistory = document.querySelector(".chatHistory ul");
 
+//access chat-window element
 let startContent = document.querySelector(".startContent");
 let startContentUl = document.querySelector(".startContent ul");
 let chatContent = document.querySelector(".chatContent");
@@ -11,14 +13,14 @@ let sendRequest = document.querySelector(".fa-paper-plane");
 let mode = document.querySelector(".mode");
 
 
-//toggle button functionality
 
+//toggle button functionality
 sidebarToggle.addEventListener('click',()=>{
     sideNavigation.classList.toggle("expandClose");//styling in style.css    
 });
 
-//when we enter the prompt then paper-plane is enabled functionality
 
+//when we enter the prompt then paper-plane is enabled functionality
 inputArea.addEventListener('keyup',(e)=>{
     if(e.target.value.length > 0){
         sendRequest.style.display = "inline";
@@ -30,8 +32,8 @@ sendRequest.addEventListener('click',()=>{
     getGeminiResponse(inputArea.value,true);// onclick the question will be appear in the recent list
 });
 
-//recent list functionality
 
+//recent list functionality
 function getGeminiResponse(question, appendhistory){
 
     if (appendhistory){
@@ -101,7 +103,6 @@ function getGeminiResponse(question, appendhistory){
 
         let textArea = document.createElement("textarea");
         textArea.innerHTML = newResponse2;
-        // document.querySelector(".result .resultData").remove;
 
         result.innerHTML = 
         `<div class = "resultResponse"> 
@@ -143,6 +144,7 @@ let promptQuestions = [
     icon : "fa-solid fa-database"
 },
 ];
+
 //append this question on chat window
 window.addEventListener("load",()=>{
     promptQuestions.forEach((data)=>{
@@ -161,7 +163,7 @@ window.addEventListener("load",()=>{
     });
 });
 
-//when click on nwe chat button current chat will be disappear and new chat window will be open.
+//when click on new chat button current chat will be disappear and new chat window will be open.
 function newChat(){
     startContent.style.display="block";
     chatContent.style.display="none";
